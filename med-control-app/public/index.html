@@ -1,11 +1,85 @@
 <!DOCTYPE html>
-<html lang="it">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Controllo Farmaci</title>
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Formulario de Medicamentos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      padding: 20px;
+    }
+    form {
+      background: white;
+      padding: 20px;
+      max-width: 500px;
+      margin: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #ccc;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #aaa;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px;
+      background: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Formulario de Medicamentos</h1>
+
+  <form>
+    <label for="nombre">Nome farmaco / Principio attivo</label>
+    <input type="text" id="nombre" name="nombre" placeholder="Nombre del medicamento" required />
+
+    <label for="mg">Numero di milligrammi</label>
+    <input type="number" id="mg" name="mg" min="0" placeholder="Ej: 500" required />
+
+    <label for="tipo">Tipo</label>
+    <select id="tipo" name="tipo" required>
+      <option value="" disabled selected>Seleccione tipo</option>
+      <option value="compresse">Compresse</option>
+      <option value="gocce">Gocce</option>
+      <option value="sciroppo">Sciroppo</option>
+      <option value="altro">Altro</option>
+    </select>
+
+    <label for="dosis">Dossio</label>
+    <input type="text" id="dosis" name="dosis" placeholder="Ej: 2 compresse" required />
+
+    <label for="fecha">Data di scadenza</label>
+    <input type="date" id="fecha" name="fecha" required />
+
+    <label for="scaffale">Numero di scaffale</label>
+    <input type="text" id="scaffale" name="scaffale" placeholder="Ubicación en el estante" required />
+
+    <label for="total">Totale scatole</label>
+    <input type="number" id="total" name="total" min="0" placeholder="Cantidad total de cajas" required />
+
+    <button type="submit">Enviar</button>
+  </form>
+
+</body>
 </html>
